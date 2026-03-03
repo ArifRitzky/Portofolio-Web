@@ -62,11 +62,24 @@ header {
     text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
+    nav ul {
+        display: flex;
+        flex-wrap: nowrap; /* Memaksa menu tetap dalam satu baris, tidak turun ke bawah */
+        overflow-x: auto; /* Mengaktifkan fitur geser (scroll) horizontal */
+        justify-content: flex-start; /* Menyusun menu dari kiri ke kanan */
+        gap: 20px;
+        padding-bottom: 5px; /* Memberi sedikit ruang di bawah teks */
+        width: 100%;
+        
+        /* Menyembunyikan batang scroll (scrollbar) agar terlihat bersih */
+        -ms-overflow-style: none;  /* Untuk browser IE dan Edge */
+        scrollbar-width: none;  /* Untuk browser Firefox */
+    }
+
+    /* Menyembunyikan batang scroll untuk Chrome, Safari, dan Opera */
+    nav ul::-webkit-scrollbar {
+        display: none; 
+    }
 
 nav ul li a {
     color: var(--text-muted);
@@ -556,3 +569,4 @@ footer {
         text-align: center; 
     }
 }
+

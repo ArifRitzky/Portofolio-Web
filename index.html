@@ -179,13 +179,25 @@
         const menuIcon = document.getElementById('menu-icon');
         const navList = document.getElementById('nav-list');
 
+        // Fungsi 1: Buka tutup menu saat ikon hamburger diklik
         menuIcon.addEventListener('click', () => {
             navList.classList.toggle('active');
+        });
+
+        // Fungsi 2: Tutup menu otomatis saat salah satu teks menu diklik
+        const navLinks = document.querySelectorAll('#nav-list li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
         });
     </script>
 </body>
 </html>
 </body>
+</html>
+</body>
 
 </html>
+
 

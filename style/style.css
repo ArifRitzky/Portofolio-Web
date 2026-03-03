@@ -243,21 +243,25 @@ footer { text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255, 2
 
 /* ================= MOBILE RESPONSIVE (UKURAN HP) ================= */
 @media (max-width: 768px) {
-    html { scroll-padding-top: 180px; }
-    .section-padding { padding: 60px 5%; }
-
-    /* HEADER & HAMBURGER: Membalik urutan agar Hamburger di Kiri, Logo di Kanan */
-    header {
-        flex-direction: row-reverse; 
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 5%;
-        position: relative;
-        z-index: 999;
+    /* == KUNCI LAYAR AGAR TIDAK BISA DIGESER == */
+    html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 
-    .menu-icon { display: block; }
-    .btn-hire-nav { display: none; }
+    /* == HEADER (LOGO KE KANAN, HAMBURGER KE KIRI) == */
+    header {
+        display: flex;
+        justify-content: flex-end; /* Mendorong logo mentok ke kanan */
+        padding: 20px 5%;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        left: 5%; /* Memaku hamburger di ujung kiri layar */
+        top: 25px; /* Sesuaikan sedikit agar sejajar dengan logo */
+    }
 
     nav ul {
         position: absolute;
@@ -275,17 +279,23 @@ footer { text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255, 2
 
     nav ul.active { left: 0; }
 
-    /* HERO SECTION: Mengatur jarak dan memastikan foto proporsional */
+    /* == MEMASTIKAN SEMUA ELEMEN PRESISI DI TENGAH == */
     .hero {
         flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 140px;
-        gap: 40px;
+        padding-top: 130px;
+        gap: 30px;
         height: auto;
         min-height: 100vh;
+        overflow-x: hidden; /* Tambahan pengaman anti-bocor */
     }
-    .hero-content { max-width: 100%; }
-    .social-icons, .hero-buttons, .stats { justify-content: center; flex-wrap: wrap; }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Memaksa teks, ikon medsos, dan tombol rata tengah */
+        text-align: center;
+        width: 100%;
+    }
     
     .hero-image { width: 100%; }
     .profile-frame {
@@ -306,3 +316,4 @@ footer { text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255, 2
         text-align: center; 
     }
 }
+

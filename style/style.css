@@ -259,8 +259,9 @@ footer { text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255, 2
     .menu-icon {
         display: block;
         position: absolute;
-        left: 5%; /* Memaku hamburger di ujung kiri layar */
-        top: 25px; /* Sesuaikan sedikit agar sejajar dengan logo */
+        left: 5%;
+        top: 50%; /* Memaksa turun ke tengah wadah header */
+        transform: translateY(-50%); /* Menariknya kembali agar benar-benar presisi di tengah */
     }
 
     nav ul {
@@ -316,4 +317,5 @@ footer { text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255, 2
         text-align: center; 
     }
 }
+
 

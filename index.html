@@ -176,16 +176,16 @@
 
     <script src="script.js"></script>
     <script>
-        const menuIcon = document.getElementById('menu-icon');
-        const navList = document.getElementById('nav-list');
+        const menuIcon = document.querySelector('.menu-icon');
+        const navList = document.querySelector('nav ul');
+        const navLinks = document.querySelectorAll('nav ul li a');
 
         // Fungsi 1: Buka tutup menu saat ikon hamburger diklik
         menuIcon.addEventListener('click', () => {
             navList.classList.toggle('active');
         });
 
-        // Fungsi 2: Tutup menu otomatis saat salah satu teks menu diklik
-        const navLinks = document.querySelectorAll('#nav-list li a');
+        // Fungsi 2: Tutup menu secara otomatis saat salah satu teks menu diklik
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navList.classList.remove('active');
@@ -193,11 +193,13 @@
         });
     </script>
 </body>
+</body>
 </html>
 </body>
 </html>
 </body>
 
 </html>
+
 
 

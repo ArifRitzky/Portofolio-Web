@@ -50,6 +50,14 @@ header {
     transition: 0.3s;
 }
 
+/* Sembunyikan ikon hamburger di layar laptop */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
 .logo a {
     font-size: 28px;
     font-weight: 700;
@@ -545,20 +553,31 @@ footer {
 /* ================= MOBILE RESPONSIVE (UKURAN HP) ================= */
 @media (max-width: 768px) {
     
-    .hero {
-        height: auto; 
-        min-height: 100vh; 
-        padding-top: 180px; 
-        flex-direction: column-reverse; 
-        gap: 30px;
+    /* Tampilkan ikon hamburger di HP */
+    .menu-icon {
+        display: block;
     }
 
-    .profile-frame {
-        width: 250px;
-        height: 250px;
-        margin: 0 auto; 
+    /* Ubah navigasi menjadi kotak yang melayang dan bersembunyi di atas/samping */
+    nav ul {
+        position: absolute;
+        top: 100%; /* Turun persis di bawah header */
+        left: -100%; /* Sembunyikan ke luar layar kiri secara default */
+        width: 100%;
+        background-color: var(--bg-color); /* Warna latar belakang menu */
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        gap: 20px;
+        transition: 0.3s ease; /* Efek animasi mulus saat ditarik */
+        border-bottom: 2px solid rgba(0, 243, 255, 0.2); /* Garis batas bawah biar elegan */
     }
 
+    /* Kelas khusus untuk memunculkan menu ke layar saat diklik */
+    nav ul.active {
+        left: 0;
+    }
+}
     /* == FIX 2: MENCEGAH EMAIL MEMANJANG (OVERFLOW) == */
     .contact-info p, 
     .contact-text,
@@ -569,4 +588,5 @@ footer {
         text-align: center; 
     }
 }
+
 

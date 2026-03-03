@@ -118,17 +118,17 @@ nav ul li a:hover, nav ul li a.active {
 
     /* == PERBAIKAN HEADER & HAMBURGER MENU == */
     header {
-        flex-direction: row; /* Logo dan menu menyamping */
-        justify-content: space-between; /* Logo mentok kiri, Hamburger mentok kanan */
+        flex-direction: row-reverse; /* Ini kuncinya: Membalik urutan secara otomatis (Hamburger di Kiri, Logo di Kanan) */
+        justify-content: space-between;
         align-items: center;
         padding: 15px 5%;
-        position: relative; /* Patokan untuk menu dropdown */
+        position: relative;
         z-index: 999;
     }
 
     .menu-icon {
-        display: block; /* Munculkan ikon hamburger di HP */
-        order: -1; /* Memaksa ikon ini pindah ke urutan paling kiri */
+        display: block; 
+        /* Pastikan tidak ada perintah 'order' atau 'position: absolute' di sini lagi */
     }
 
     .btn-hire-nav {
@@ -195,3 +195,4 @@ nav ul li a:hover, nav ul li a.active {
         text-align: center; 
     }
 }
+

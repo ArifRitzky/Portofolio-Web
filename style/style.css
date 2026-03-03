@@ -324,14 +324,25 @@ footer { text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255, 2
     .about-container { flex-direction: column; gap: 30px; }
     .about-text h3 { font-size: 24px; }
 
-    /* CONTACT EMAIL OVERFLOW */
-    .contact-info p, .contact-text, a[href^="mailto:"] {
-        word-break: break-word; 
-        overflow-wrap: anywhere; 
+    /* == PERBAIKAN EMAIL MEMANJANG (OVERFLOW) == */
+    .contact-container {
+        padding: 30px 15px; /* Kurangi bantalan kiri-kanan agar ruang untuk teks email lebih lega */
+        width: 100%;
+        overflow: hidden; /* Mencegah elemen apa pun tumpah ke luar kotak */
+    }
+
+    /* Membidik semua teks di dalam kotak kontak */
+    .contact-container p, 
+    .contact-container a, 
+    .contact-container h3, 
+    .contact-container h4,
+    .contact-container span {
+        word-wrap: break-word;
+        word-break: break-all; /* Perintah mutlak untuk memotong teks panjang persis di batas layar */
         white-space: normal;
-        text-align: center; 
     }
 }
+
 
 
 

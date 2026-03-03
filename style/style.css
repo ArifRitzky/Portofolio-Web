@@ -532,10 +532,27 @@ footer {
 /* ================= MOBILE RESPONSIVE (UKURAN HP) ================= */
 @media (max-width: 768px) {
     
-    html {
-        scroll-padding-top: 180px; 
+    .hero {
+        height: auto; 
+        min-height: 100vh; 
+        padding-top: 180px; 
+        flex-direction: column-reverse; 
+        gap: 30px;
     }
 
-    .section-padding {
-        padding: 60px 5%;
+    .profile-frame {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto; 
     }
+
+    /* == FIX 2: MENCEGAH EMAIL MEMANJANG (OVERFLOW) == */
+    .contact-info p, 
+    .contact-text,
+    a[href^="mailto:"] {
+        word-break: break-word; 
+        overflow-wrap: anywhere; 
+        white-space: normal;
+        text-align: center; 
+    }
+}

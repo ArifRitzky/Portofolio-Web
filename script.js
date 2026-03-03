@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-    // Memilih semua elemen dengan class 'fade-in'
     const faders = document.querySelectorAll('.fade-in');
 
     const appearOptions = {
@@ -11,11 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const appearOnScroll = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Jika masuk layar, tambahkan class appear (elemen muncul ke atas)
                 entry.target.classList.add('appear');
             } else {
-                // Jika keluar layar, cabut class appear (elemen kembali turun & transparan)
-                // Ini yang bikin animasinya bisa berulang terus saat naik-turun!
                 entry.target.classList.remove('appear');
             }
         });
@@ -24,5 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
     });
+
 
 });

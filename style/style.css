@@ -249,37 +249,52 @@ footer { text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255, 2
         overflow-x: hidden;
     }
 
-    /* == HEADER (LOGO KE KANAN, HAMBURGER KE KIRI) == */
+    /* == PERBAIKAN HEADER & HAMBURGER MENU == */
     header {
         display: flex;
-        justify-content: flex-end; /* Mendorong logo mentok ke kanan */
-        padding: 20px 5%;
+        flex-direction: row; /* Kembali ke urutan normal */
+        justify-content: space-between;
+        align-items: center; /* KUNCI SEJAJAR: Flexbox akan memastikan keduanya sejajar vertikal di tengah */
+        padding: 15px 5%;
+        position: relative;
+        z-index: 999;
+    }
+
+    .logo {
+        order: 2; /* Memaksa Logo pindah ke ujung kanan */
     }
 
     .menu-icon {
         display: block;
-        position: absolute;
-        left: 5%;
-        top: 50%; /* Memaksa turun ke tengah wadah header */
-        transform: translateY(-50%); /* Menariknya kembali agar benar-benar presisi di tengah */
+        order: 1; /* Memaksa Hamburger pindah ke ujung kiri */
+        position: static; /* HAPUS absolute agar tidak meleset naik-turun di HP */
+        transform: none; 
+        font-size: 28px;
+    }
+
+    nav {
+        position: absolute; /* Mengeluarkan wadah nav dari Flexbox agar tidak mendorong hamburger ke tengah */
+        top: 100%; /* Memulai dropdown tepat di bawah batas header */
+        left: 0;
+        width: 100%;
     }
 
     nav ul {
-        position: absolute;
-        top: 100%;
-        left: -100%;
+        position: relative; /* Patokannya sekarang adalah elemen nav */
+        left: -100%; /* Bersembunyi di kiri layar */
         width: 100%;
         background-color: var(--bg-color);
         flex-direction: column;
         text-align: center;
         padding: 20px 0;
         gap: 20px;
-        transition: 0.3s ease;
+        transition: left 0.3s ease;
         border-bottom: 2px solid rgba(0, 243, 255, 0.2);
     }
 
-    nav ul.active { left: 0; }
-
+    nav ul.active {
+        left: 0; /* Muncul saat ikon diklik */
+    }
     /* == MEMASTIKAN SEMUA ELEMEN PRESISI DI TENGAH == */
     .hero {
         flex-direction: column-reverse;
@@ -317,5 +332,6 @@ footer { text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255, 2
         text-align: center; 
     }
 }
+
 
 

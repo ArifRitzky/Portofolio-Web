@@ -553,27 +553,30 @@ footer {
 /* ================= MOBILE RESPONSIVE (UKURAN HP) ================= */
 @media (max-width: 768px) {
     
-    /* Tampilkan ikon hamburger di HP */
+    /* Munculkan ikon hamburger di posisi kanan atas HP */
     .menu-icon {
         display: block;
+        position: absolute;
+        right: 5%;
+        top: 25px;
     }
 
-    /* Ubah navigasi menjadi kotak yang melayang dan bersembunyi di atas/samping */
+    /* Ubah daftar menu menjadi melayang dan bersembunyi di luar layar kiri */
     nav ul {
         position: absolute;
-        top: 100%; /* Turun persis di bawah header */
-        left: -100%; /* Sembunyikan ke luar layar kiri secara default */
+        top: 100%;
+        left: -100%;
         width: 100%;
-        background-color: var(--bg-color); /* Warna latar belakang menu */
+        background-color: var(--bg-color);
         flex-direction: column;
         text-align: center;
         padding: 20px 0;
         gap: 20px;
-        transition: 0.3s ease; /* Efek animasi mulus saat ditarik */
-        border-bottom: 2px solid rgba(0, 243, 255, 0.2); /* Garis batas bawah biar elegan */
+        transition: 0.3s ease;
+        border-bottom: 2px solid rgba(0, 243, 255, 0.2);
     }
 
-    /* Kelas khusus untuk memunculkan menu ke layar saat diklik */
+    /* Kelas pelatuk untuk memunculkan menu ke tengah layar */
     nav ul.active {
         left: 0;
     }
@@ -588,5 +591,6 @@ footer {
         text-align: center; 
     }
 }
+
 
 
